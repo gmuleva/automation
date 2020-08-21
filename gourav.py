@@ -1,15 +1,31 @@
 from selenium import webdriver
+from selenium.webdriver.support.select import Select
+import time
 
 driver=webdriver.Firefox()
+driver.get("https://fs2.formsite.com/meherpavan/form2/index.html?1537702596407")
+
+xyz=driver.find_element_by_id("RESULT_RadioButton-9")
+drp=Select(xyz)
 
 
 
-driver.get("https://www.expedia.com/")
 
-driver.find_element(BY.ID,"/html/body/div[1]/div[1]/div/div[2]/div/div[2]/div/figure/div[3]/div/div/div/ul/li[2]/a").click()
+drp.select_by_visible_text('Morning')
+time.sleep(5)
+drp.select_by_index(2)
+time.sleep(5)
 
-time.sleep(2)
+print(len(drp.options))
 
+all_options=drp.options
+
+for option in all_options:
+    print(option.text)
 
 driver.close()
+
+
+
+
 
