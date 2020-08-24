@@ -1,6 +1,6 @@
 
 
-for j in range(15):
+for j numbersinin range(15):
     print("#", end="")
 
 print()
