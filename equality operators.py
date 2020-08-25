@@ -1,0 +1,9 @@
+10==20
+False
+10!=20
+True
+10==True
+False
+"durga"=="durga"
+True
+10=="durga"
