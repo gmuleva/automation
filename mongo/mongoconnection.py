@@ -1,7 +1,13 @@
 import pymongo
-myclient=pymongo.MongoClient("mongodb://localhost:27017/")
-mydb=myclient["school"]
-mycollection=mydb['student']
 
-my_many_records=[{"name":"Harish"},{"name":"Yash"},{"name":"Jay"},{"name":"Aditya"}]
-x = mycollection.insert_many(my_many_records)
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+
+mydb = myclient['Harish']
+mycol = mydb["customers"]
+collist = mydb.list_collection_names()
+if "customers" in collist:
+  print("The collection exists.")
+print(mycol)
+mydict = { "name": "John", "address": "Highway 37" }
+
+x = mycol.insert_one(mydict)
